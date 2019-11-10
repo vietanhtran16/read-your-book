@@ -1,4 +1,4 @@
-package nz.co.stuff.planyourtrip;
+package nz.co.stuff.planyourtrip.domain;
 
 import java.time.LocalDate;
 
