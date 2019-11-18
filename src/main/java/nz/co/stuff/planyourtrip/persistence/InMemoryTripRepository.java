@@ -16,9 +16,9 @@ public class InMemoryTripRepository implements TripRepository {
         LOG.info("InMemoryTripRepository created");
     }
     private static final List<Trip> TRIPS = Arrays.asList(
-        new Trip(1, "Bangkok", LocalDate.now()),
-        new Trip(2, "Sydney", LocalDate.now()),
-        new Trip(3, "Amsterdam", LocalDate.now())
+        new Trip(1, "Bangkok", LocalDate.now(), null),
+        new Trip(2, "Sydney", LocalDate.now(), null),
+        new Trip(3, "Amsterdam", LocalDate.now(), null)
     );
 
     @Override
