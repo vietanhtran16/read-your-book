@@ -1,18 +1,22 @@
 package nz.co.stuff.planyourtrip.persistence;
 
-import nz.co.stuff.planyourtrip.domain.Book;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Repository;
 
-import java.util.Arrays;
-import java.util.List;
+import nz.co.stuff.planyourtrip.domain.Book;
 
 @Repository
 public class InMemoryBookRepository implements BookRepository {
-    private static List<Book> books = Arrays.asList(
-            new Book(1, "Clean code", "Software"),
-            new Book(2, "Clean architecture", "Software"),
-            new Book(3, "Hello world", "Software")
-    );
+    private static List<Book> books = new ArrayList<Book>();
+
+    public InMemoryBookRepository(){
+        books.add(new Book("Clean code", "Software Development"));
+        books.add(new Book("Clean architecture", "Software Development"));
+        books.add(new Book("Hehe", "Software Development"));
+    }
+
     @Override
     public List<Book> getAllBooks() {
         return InMemoryBookRepository.books;
@@ -28,6 +32,6 @@ public class InMemoryBookRepository implements BookRepository {
 
     @Override
     public void saveBook(Book book) {
-        InMemoryBookRepository.books.add(book);
+        books.add(book);
     }
 }

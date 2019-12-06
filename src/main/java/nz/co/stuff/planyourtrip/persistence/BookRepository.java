@@ -1,9 +1,8 @@
 package nz.co.stuff.planyourtrip.persistence;
 
-import nz.co.stuff.planyourtrip.domain.Book;
-import nz.co.stuff.planyourtrip.domain.Trip;
-
 import java.util.List;
+
+import nz.co.stuff.planyourtrip.domain.Book;
 
 public interface BookRepository {
     List<Book> getAllBooks();

@@ -1,12 +1,16 @@
 package nz.co.stuff.planyourtrip.domain;
 
 public class Book {
+    private static long currentId = 0;
     private final long id;
     private final String name;
     private final String category;
 
-    public Book(long id, String name, String category){
-        this.id = id;
+    public Book(){
+        this(null, null);
+    }
+    public Book(String name, String category){
+        this.id = ++currentId;
         this.name = name;
         this.category = category;
     }
