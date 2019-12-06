@@ -25,4 +25,9 @@ public class InMemoryBookRepository implements BookRepository {
                 .findFirst()
                 .orElse(null);
     }
+
+    @Override
+    public void saveBook(Book book) {
+        InMemoryBookRepository.books.add(book);
+    }
 }
