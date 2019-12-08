@@ -1,6 +1,7 @@
 package nz.co.stuff.planyourtrip.api;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import nz.co.stuff.planyourtrip.domain.Book;
+import nz.co.stuff.planyourtrip.dto.BookDto;
 import nz.co.stuff.planyourtrip.persistence.BookRepository;
 
 @RestController
@@ -23,19 +25,25 @@ public class BookController {
     }
 
     @GetMapping
-    public List<Book> getAllBooks() {
-        return this.bookRepository.getAllBooks();
+    public List<BookDto> getAllBooks() {
+        var books = this.bookRepository.getAllBooks();
+        return books.stream().map(book -> toDto(book)).collect(Collectors.toList());
     }
 
     @GetMapping("/{id}")
-    public Book getBook(@PathVariable("id") long id){
-        return this.bookRepository.getBook(id);
+    public BookDto getBook(@PathVariable("id") long id){
+        var book = this.bookRepository.getBook(id);
+        return toDto(book);
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public void saveBook(@RequestBody Book book){
         this.bookRepository.saveBook(book);
+    }
+
+    private BookDto toDto(Book book){
+        return new BookDto(book.getId(), book.getName(), book.getCategory());
     }
 }
 
