@@ -46,4 +46,3 @@ public class BookController {
         return new BookDto(book.getId(), book.getName(), book.getCategory());
     }
 }
-
