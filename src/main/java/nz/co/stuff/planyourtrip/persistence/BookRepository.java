@@ -8,4 +8,5 @@ public interface BookRepository {
     List<Book> getAllBooks();
     Book getBook(long id);
     void saveBook(Book book);
+    void updateReadingProgress();
 }
