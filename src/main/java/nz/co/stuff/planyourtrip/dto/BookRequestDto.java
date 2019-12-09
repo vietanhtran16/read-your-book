@@ -1,18 +1,12 @@
 package nz.co.stuff.planyourtrip.dto;
 
-public class BookDto {
-    private final long id;
+public class BookRequestDto {
     private final String name;
     private final String category;
 
-    public BookDto(long id, String name, String category){
-        this.id = id;
+    public BookRequestDto(String name, String category){
         this.name = name;
         this.category = category;
-    }
-
-    public long getId(){
-        return this.id;
     }
 
     public String getName(){

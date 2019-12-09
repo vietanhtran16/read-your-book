@@ -1,13 +1,12 @@
-package nz.co.stuff.planyourtrip.domain;
+package nz.co.stuff.planyourtrip.dto;
 
-public class Book {
-    private static long currentId = 0;
+public class BookResponseDto {
     private final long id;
     private final String name;
     private final String category;
 
-    public Book(String name, String category){
-        this.id = ++currentId;
+    public BookResponseDto(long id, String name, String category){
+        this.id = id;
         this.name = name;
         this.category = category;
     }

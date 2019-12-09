@@ -13,7 +13,8 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import nz.co.stuff.planyourtrip.domain.Book;
-import nz.co.stuff.planyourtrip.dto.BookDto;
+import nz.co.stuff.planyourtrip.dto.BookRequestDto;
+import nz.co.stuff.planyourtrip.dto.BookResponseDto;
 import nz.co.stuff.planyourtrip.persistence.BookRepository;
 
 @RestController
@@ -25,24 +26,33 @@ public class BookController {
     }
 
     @GetMapping
-    public List<BookDto> getAllBooks() {
+    public List<BookResponseDto> getAllBooks() {
         var books = this.bookRepository.getAllBooks();
-        return books.stream().map(book -> toDto(book)).collect(Collectors.toList());
+        return toBookResponseDtos(books);
     }
 
     @GetMapping("/{id}")
-    public BookDto getBook(@PathVariable("id") long id){
+    public BookResponseDto getBook(@PathVariable("id") long id){
         var book = this.bookRepository.getBook(id);
-        return toDto(book);
+        return toBookResponseDto(book);
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void saveBook(@RequestBody Book book){
+    public void saveBook(@RequestBody BookRequestDto bookRequestDto){
+        var book = toBook(bookRequestDto);
         this.bookRepository.saveBook(book);
     }
 
-    private BookDto toDto(Book book){
-        return new BookDto(book.getId(), book.getName(), book.getCategory());
+    private BookResponseDto toBookResponseDto(Book book){
+        return new BookResponseDto(book.getId(), book.getName(), book.getCategory());
+    }
+
+    private List<BookResponseDto> toBookResponseDtos(List<Book> books){
+        return books.stream().map(book -> toBookResponseDto(book)).collect(Collectors.toList());
+    }
+
+    private Book toBook(BookRequestDto bookDto){
+        return new Book(bookDto.getName(), bookDto.getCategory());
     }
 }
