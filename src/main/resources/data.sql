@@ -1,13 +1,12 @@
-DROP TABLE IF EXISTS billionaires;
+DROP TABLE IF EXISTS Book;
 
-CREATE TABLE billionaires (
-  id INT AUTO_INCREMENT  PRIMARY KEY,
-  first_name VARCHAR(250) NOT NULL,
-  last_name VARCHAR(250) NOT NULL,
-  career VARCHAR(250) DEFAULT NULL
+CREATE TABLE Book (
+  Id INT AUTO_INCREMENT PRIMARY KEY,
+  Name VARCHAR(250) NOT NULL,
+  Category VARCHAR(250) NOT NULL
 );
 
-INSERT INTO billionaires (first_name, last_name, career) VALUES
-  ('Aliko', 'Dangote', 'Billionaire Industrialist'),
-  ('Bill', 'Gates', 'Billionaire Tech Entrepreneur'),
-  ('Folrunsho', 'Alakija', 'Billionaire Oil Magnate');
+INSERT INTO Book (Name, Category) VALUES
+  ('Clean code', 'Software Development'),
+  ('Clean architecture', 'Software Development'),
+  ('4 Rules of Simple Design', 'Software Development');
