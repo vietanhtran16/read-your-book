@@ -49,7 +49,7 @@ public class BookController {
     }
 
     private List<BookResponseDto> toBookResponseDtos(List<Book> books){
-        return books.stream().map(book -> toBookResponseDto(book)).collect(Collectors.toList());
+        return books.stream().map(this::toBookResponseDto).collect(Collectors.toList());
     }
 
     private Book toBook(BookRequestDto bookDto){

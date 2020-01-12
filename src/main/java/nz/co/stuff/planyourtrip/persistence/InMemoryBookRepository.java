@@ -9,7 +9,7 @@ import nz.co.stuff.planyourtrip.domain.Book;
 
 @Repository
 public class InMemoryBookRepository implements BookRepository {
-    private static List<Book> books = new ArrayList<Book>();
+    private static List<Book> books = new ArrayList<>();
 
     public InMemoryBookRepository(){
         books.add(new Book("Clean code", "Software Development"));
