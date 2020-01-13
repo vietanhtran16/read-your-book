@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import nz.co.stuff.planyourtrip.domain.Book;
 
-@Repository
+//@Repository
 public class InMemoryBookRepository implements BookRepository {
     private static List<Book> books = new ArrayList<>();
 
