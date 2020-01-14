@@ -2,28 +2,25 @@ package nz.co.stuff.planyourtrip.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Book {
-    private static long currentId = 0;
     @Id
-    @GeneratedValue
-    private final long id;
-    private final String name;
-    private final String category;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    private String name;
+    private String category;
 
     public Book() {
-        this.id = ++currentId;
-        this.name = "";
-        this.category = "";
     }
 
     public Book(String name, String category){
-        this.id = ++currentId;
         this.name = name;
         this.category = category;
     }
+
 
     public long getId(){
         return this.id;
