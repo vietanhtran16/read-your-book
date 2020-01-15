@@ -16,6 +16,7 @@ import nz.co.stuff.planyourtrip.domain.Book;
 import nz.co.stuff.planyourtrip.dto.BookRequestDto;
 import nz.co.stuff.planyourtrip.dto.BookResponseDto;
 import nz.co.stuff.planyourtrip.persistence.BookRepository;
+import org.springframework.web.server.ResponseStatusException;
 
 @RestController
 @RequestMapping("/api/v1/books")
@@ -33,8 +34,14 @@ public class BookController {
 
     @GetMapping("/{id}")
     public BookResponseDto getBook(@PathVariable("id") long id){
-        var book = this.bookRepository.getBook(id);
-        return toBookResponseDto(book);
+        try {
+            var book = this.bookRepository.getBook(id);
+            return toBookResponseDto(book);
+        } catch (Exception exception){
+            throw new ResponseStatusException(
+                    HttpStatus.NOT_FOUND, "Book not found", exception
+            );
+        }
     }
 
     @PostMapping
