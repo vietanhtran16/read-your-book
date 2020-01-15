@@ -1,7 +1,7 @@
-package nz.co.stuff.planyourtrip.persistence;
+package nz.co.stuff.readyourbook.persistence;
 
-import nz.co.stuff.planyourtrip.domain.Book;
-import nz.co.stuff.planyourtrip.jpa.BookInMemoryRepository;
+import nz.co.stuff.readyourbook.domain.Book;
+import nz.co.stuff.readyourbook.jpa.BookInMemoryRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

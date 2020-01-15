@@ -1,6 +1,6 @@
-package nz.co.stuff.planyourtrip.jpa;
+package nz.co.stuff.readyourbook.jpa;
 
-import nz.co.stuff.planyourtrip.domain.Book;
+import nz.co.stuff.readyourbook.domain.Book;
 import org.springframework.data.repository.CrudRepository;
 
 public interface BookInMemoryRepository extends CrudRepository<Book, Long> {

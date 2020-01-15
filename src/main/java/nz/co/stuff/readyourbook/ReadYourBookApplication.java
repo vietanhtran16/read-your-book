@@ -1,12 +1,12 @@
-package nz.co.stuff.planyourtrip;
+package nz.co.stuff.readyourbook;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PlanYourTripApplication {
+public class ReadYourBookApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PlanYourTripApplication.class, args);
+		SpringApplication.run(ReadYourBookApplication.class, args);
 	}
 }

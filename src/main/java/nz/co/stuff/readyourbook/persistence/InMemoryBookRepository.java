@@ -1,11 +1,9 @@
-package nz.co.stuff.planyourtrip.persistence;
+package nz.co.stuff.readyourbook.persistence;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.stereotype.Repository;
-
-import nz.co.stuff.planyourtrip.domain.Book;
+import nz.co.stuff.readyourbook.domain.Book;
 
 //@Repository
 public class InMemoryBookRepository implements BookRepository {

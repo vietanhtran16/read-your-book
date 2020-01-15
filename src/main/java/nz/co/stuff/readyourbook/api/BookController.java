@@ -1,4 +1,4 @@
-package nz.co.stuff.planyourtrip.api;
+package nz.co.stuff.readyourbook.api;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import nz.co.stuff.planyourtrip.domain.Book;
-import nz.co.stuff.planyourtrip.dto.BookRequestDto;
-import nz.co.stuff.planyourtrip.dto.BookResponseDto;
-import nz.co.stuff.planyourtrip.persistence.BookRepository;
+import nz.co.stuff.readyourbook.domain.Book;
+import nz.co.stuff.readyourbook.dto.BookRequestDto;
+import nz.co.stuff.readyourbook.dto.BookResponseDto;
+import nz.co.stuff.readyourbook.persistence.BookRepository;
 import org.springframework.web.server.ResponseStatusException;
 
 @RestController
@@ -63,3 +63,4 @@ public class BookController {
         return new Book(bookDto.getName(), bookDto.getCategory());
     }
 }
+

@@ -1,4 +1,4 @@
-package nz.co.stuff.planyourtrip.dto;
+package nz.co.stuff.readyourbook.dto;
 
 public class BookRequestDto {
     private final String name;

@@ -1,4 +1,4 @@
-package nz.co.stuff.planyourtrip;
+package nz.co.stuff.readyourbook;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
