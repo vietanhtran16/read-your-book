@@ -1,6 +1,6 @@
 package nz.co.stuff.readyourbook.persistence;
 
-import nz.co.stuff.readyourbook.domain.Book;
+import nz.co.stuff.readyourbook.entity.Book;
 import nz.co.stuff.readyourbook.jpa.BookInMemoryRepository;
 import org.springframework.stereotype.Service;
 

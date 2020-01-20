@@ -1,4 +1,4 @@
-package nz.co.stuff.readyourbook.domain;
+package nz.co.stuff.readyourbook.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

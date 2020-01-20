@@ -3,7 +3,7 @@ package nz.co.stuff.readyourbook.persistence;
 import java.util.ArrayList;
 import java.util.List;
 
-import nz.co.stuff.readyourbook.domain.Book;
+import nz.co.stuff.readyourbook.entity.Book;
 
 //@Repository
 public class InMemoryBookRepository implements BookRepository {

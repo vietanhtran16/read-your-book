@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import nz.co.stuff.readyourbook.domain.Book;
+import nz.co.stuff.readyourbook.entity.Book;
 import nz.co.stuff.readyourbook.dto.BookRequestDto;
 import nz.co.stuff.readyourbook.dto.BookResponseDto;
 import nz.co.stuff.readyourbook.persistence.BookRepository;
