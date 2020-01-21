@@ -1,7 +1,7 @@
 package nz.co.stuff.readyourbook.jpa;
 
 import nz.co.stuff.readyourbook.entity.Book;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface BookInMemoryRepository extends CrudRepository<Book, Long> {
+public interface BookInMemoryRepository extends JpaRepository<Book, Long> {
 }
