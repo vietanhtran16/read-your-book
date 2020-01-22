@@ -21,4 +21,12 @@ public class ReadingProgress {
     @ManyToOne()
     @JoinColumn()
     private Book book;
+
+    public long getId() { return this.id; }
+
+    public Date getTimestamp() { return this.timestamp; }
+
+    public Integer getPercentageCompleted() { return this.percentageCompleted; }
+
+    public Long getBookId() { return this.book.getId(); }
 }
