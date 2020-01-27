@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface ReadingProgressRepository {
     List<ReadingProgress> getAllReadingProgress();
+    void saveReadingProgress(ReadingProgress readingProgress);
 }

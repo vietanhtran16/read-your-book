@@ -19,4 +19,9 @@ public class InMemoryDbReadingProgressRepository implements ReadingProgressRepos
     public List<ReadingProgress> getAllReadingProgress() {
         return new ArrayList<>(this.readingProgressInMemoryRepository.findAll());
     }
+
+    @Override
+    public void saveReadingProgress(ReadingProgress readingProgress) {
+        this.readingProgressInMemoryRepository.save(readingProgress);
+    }
 }

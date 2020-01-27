@@ -10,9 +10,15 @@ import java.util.Date;
 
 @Entity
 public class ReadingProgress {
+    public ReadingProgress() {}
+    public ReadingProgress(Date timestamp, Integer percentageCompleted, Book book){
+        this.timestamp = timestamp;
+        this.percentageCompleted = percentageCompleted;
+        this.book = book;
+    }
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
 
     private Date timestamp;
 
@@ -28,5 +34,5 @@ public class ReadingProgress {
 
     public Integer getPercentageCompleted() { return this.percentageCompleted; }
 
-    public Long getBookId() { return this.book.getId(); }
+    public long getBookId() { return this.book.getId(); }
 }
