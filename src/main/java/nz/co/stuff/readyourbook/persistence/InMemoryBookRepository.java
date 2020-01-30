@@ -8,10 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class InMemoryDbBookRepository implements BookRepository {
+public class InMemoryBookRepository implements BookRepository {
     private final BookInMemoryRepository bookInMemoryRepository;
 
-    public InMemoryDbBookRepository(BookInMemoryRepository bookInMemoryRepository) {
+    public InMemoryBookRepository(BookInMemoryRepository bookInMemoryRepository) {
         this.bookInMemoryRepository = bookInMemoryRepository;
     }
 

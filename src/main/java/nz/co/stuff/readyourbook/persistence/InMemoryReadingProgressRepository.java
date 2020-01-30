@@ -8,10 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class InMemoryDbReadingProgressRepository implements ReadingProgressRepository {
+public class InMemoryReadingProgressRepository implements ReadingProgressRepository {
     private final ReadingProgressInMemoryRepository readingProgressInMemoryRepository;
 
-    public InMemoryDbReadingProgressRepository(ReadingProgressInMemoryRepository readingProgressInMemoryRepository) {
+    public InMemoryReadingProgressRepository(ReadingProgressInMemoryRepository readingProgressInMemoryRepository) {
         this.readingProgressInMemoryRepository = readingProgressInMemoryRepository;
     }
 
