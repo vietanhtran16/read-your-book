@@ -1,6 +1,12 @@
 FROM openjdk:11 as compile
-COPY . /home/source/java
 WORKDIR /home/source/java
+
+COPY gradlew /home/source/java
+COPY *.gradle /home/source/java/
+COPY gradle/ /home/source/java/gradle
+RUN ./gradlew dependencies
+
+COPY . /home/source/java
 RUN ./gradlew build
 
 FROM openjdk:11-jre-slim
