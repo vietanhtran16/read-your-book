@@ -1,8 +1,7 @@
 FROM openjdk:11 as compile
 WORKDIR /home/source/java
 
-COPY gradlew /home/source/java
-COPY *.gradle /home/source/java/
+COPY gradlew *.gradle /home/source/java/
 COPY gradle/ /home/source/java/gradle
 RUN ./gradlew dependencies
 
