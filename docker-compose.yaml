@@ -1,7 +1,10 @@
 version: "3.7"
 services:
   backend:
-    build: .
+    build:
+      context: .
+      args:
+        - PROFILE=docker
     ports:
       - "8080:8080"
     depends_on:
